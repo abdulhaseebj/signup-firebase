@@ -14,7 +14,7 @@ form.addEventListener('submit', (e) => {
             // Signed up
             const user = res.user;
             console.log(user);
-            window.location = './index.html'
+            window.location = './home.html'
         })
         .catch((error) => {
             const errorCode = error.code;
