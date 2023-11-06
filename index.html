@@ -5,17 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LogIN</title>
+    <link rel="stylesheet" href="./dist/style.css">
+    <!-- 2nd css link -->
     <link rel="stylesheet" href="style.css">
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
 </head>
 
-<body>
-    <h1 class="main-head">Login</h1>
-    <form class="form">
-        <input type="email" placeholder="email" class="email"><br>
-        <input type="password" placeholder="password" class="password"><br>
-        <button class="button" type="submit">login</button>
-    </form>
-    <a class="anker" href="./signup.html">Not a User</a>
+<body class="bg-[#f1f3f6]">
+
+    <div class="flex justify-center items-center ">
+        <div class="pt-[80px] ">
+            <div class="bg-white pt-6 rounded-2xl px-9">
+                <h2 class="text-3xl font-black text-center font-mono">Login</h2>
+                <div class="mt-5  ">
+                    <form class="form">
+                        <div class="flex ">
+                            <input class="border input text-sm font-black rounded-md email" type="email"
+                                placeholder="Email"><br>
+                        </div>
+                        <div class="flex  ">
+                                <input class="border input text-sm mt-4 rounded-md font-black password" type="password"
+                                    placeholder="Password">
+                        </div>
+                        <p class="text-blue-800 text-sm font-black  mt-4 text-center">Forget Password?</p>
+                        <div class="flex ">
+                            <button
+                                class="mt-4 bg-sky-400 px-[123px] py-2 font-black rounded-md text-white mb-9 text-center" type="submit">Login</button>
+                        </div>
+                        <div class="">
+                            <p class="text-center pb-5 ">Dont have an account?<a href="./signup.html">SignUp</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="bg-white ">
+        <div class="p-[100px]">
+            <h2 class="text-3xl font-black text-center font-mono">Login</h2>
+            <form class="form">
+                <div class="flex ">
+                    <input class="border input text-sm font-black rounded-md email" type="email"
+                        placeholder="Email"><br>
+                </div>
+                <div class="flex">
+                    <input class="border input text-sm mt-4 rounded-md font-black password" type="password"
+                        placeholder="Password">
+                </div>
+                <p class="text-blue-800 text-sm font-black  mt-4 text-center">Forget Password?</p>
+                <div class="flex ">
+                    <button class="mt-4 bg-sky-400 px-[123px] py-2 font-black rounded-md text-white mb-9 text-center"
+                        type="submit">Login</button>
+                </div>
+                <div class="">
+                    <p class="text-center ">Dont have an account?<a href="./signup.html">SignUp</a></p>
+                </div>
+
+            </form>
+        </div>
+    </div> -->
+
+
+
     <script type="module" src="app.js"></script>
 </body>
 

@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
+    <link rel="stylesheet" href="./dist/style.css">
+    <!-- 2nd css link -->
     <link rel="stylesheet" href="style.css">
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1 class="main-head">Home</h1>
-    <button class="btn">LogOut</button>
+    <!-- <div class="flex justify-between">
+        <h1>Home</h1>
+        <div class="">
+            <button class="btn">Logout</button>
+        </div>
+    </div> -->
+    <div class="grid container">
+        <div class="ggrid">
+            <h1>Home</h1>
+        </div>
+        <div class="grid">
+            <button class="btn">Logout</button>
+        </div>
+    </div>
+    
+    
+    <form class="form">
+        <input type="text" class="title" placeholder="Title">
+        <input type="text" class="discription" placeholder="discription">
+        <button type="submit">Submit</button>
+    </form>
+    <div class="card">
+
+    </div>
+
+    <button class="data">Show Data</button>
+
     <script type="module" src="home.js"></script>
 </body>
+
 </html>

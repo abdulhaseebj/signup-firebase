@@ -1,48 +1,29 @@
-* {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+*{
+    font-family: 'Poppins', sans-serif;
 }
 
-.main-head {
-    text-align: center;
-    font-size: 50px;
-}
-
-.form {
-    text-align: center;
-}
-
-.email {
-    padding: 5px;
-    font-size: 15px;
-    margin-top: 10px;
-
-}
-
-.password {
-    padding: 5px;
-    font-size: 15px;
-    margin-top: 10px;
-
-}
-
-.button {
-    font-size: 20px;
-    padding: 5px 25px;
-    border-radius: 8px;
-    margin-top: 20px;
-    border: none;
-}
-.sign{
+/* .body {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f1f3f6;
+    font-family: 'Poppins', sans-serif;
+    padding: 0px;
+} */
+.input{
+    width: 100%;
+    padding: 8px;
 }
-.anker{
+ .grid {
     display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    text-decoration: none; 
-   
+    align-items: center; 
 }
+
+.container{
+    justify-content: space-between;
+}
+
 
 

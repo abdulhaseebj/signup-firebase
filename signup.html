@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signUp</title>
+    <link rel="stylesheet" href="./dist/style.css">
+    <!-- 2nd css link -->
     <link rel="stylesheet" href="style.css">
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
 </head>
-<body>
-     <h1 class="main-head">SignUp</h1>
-    <form class="form">
-        <input type="email" placeholder="email" class="email"><br>
-        <input type="password" placeholder="password" class="password"><br>
-        <button class="button" type="submit">SignUp</button>
-    </form>
-    <a class="anker" href="./index.html">Already a user?</a>
+
+<body class=" bg-[#f1f3f6]">
+    <div class="flex justify-center items-center w-full h-full ">
+        <div class=" pt-[80px] pb-[0px]">
+            <div class="bg-white  rounded-2xl px-9 ">
+                <h2 class="text-3xl font-black text-center pt-6 font-mono">Signup</h2>
+                <form class="form">
+                    <div class="mt-5 ">
+                        <div class="flex ">
+                            <input class="border input text-sm font-black rounded-md email" type="email"
+                                placeholder="Email"><br>
+                        </div>
+                        <div class="flex ">
+                            <input class="border input text-sm font-black mt-4 rounded-md password" type="password"
+                                placeholder="Create Password">
+                        </div>
+                    </div>
+                    <div class="flex ">
+                        <input class="border input text-sm mt-4 font-black rounded-md confirmPassword" type="password"
+                            placeholder="Confirm Password">
+                    </div>
+                    <div class="flex ">
+                        <button
+                            class="mt-9 bg-sky-400 px-[117px] py-2 font-black text-white mb-9 text-center rounded-md signUp "
+                            type="submit">Signup</button>
+                    </div>
+                    <p class="text-center pb-5">Already have an account?<a href="./index.html">LogIN</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+
     <script type="module" src="signup.js"></script>
 </body>
+
 </html>
