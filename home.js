@@ -38,25 +38,7 @@ const data = document.querySelector('.data')
 
 
 const arr = [];
-data.addEventListener('click', async function getDataFromFirestore() {
-    const querySnapshot = await getDocs(collection(db, "posts"));
-    querySnapshot.forEach((doc) => {
-        arr.push(doc.data())
-    });
-    arr.map((items) => {
-        card.innerHTML += `
-        <div class="">
-        <div class="">
-            <p><span class="h4">Title:</span>${items.Title}</p>
-            <p><span class="h4">Description:</span>${items.Description}</p>
-        </div>
-    </div>`
-
-    })
-
-
-})
-// async function getDataFromFirestore() {
+// data.addEventListener('click', async function getDataFromFirestore() {
 //     const querySnapshot = await getDocs(collection(db, "posts"));
 //     querySnapshot.forEach((doc) => {
 //         arr.push(doc.data())
@@ -73,8 +55,27 @@ data.addEventListener('click', async function getDataFromFirestore() {
 //     })
 
 
-// }
-// getDataFromFirestore()
+// })
+async function getDataFromFirestore() {
+    arr.length = 0;
+    const querySnapshot = await getDocs(collection(db, "posts"));
+    querySnapshot.forEach((doc) => {
+        arr.push(doc.data())
+    });
+    arr.map((items) => {
+        card.innerHTML += `
+        <div class="">
+        <div class="">
+            <p><span class="h4">Title:</span>${items.Title}</p>
+            <p><span class="h4">Description:</span>${items.Description}</p>
+        </div>
+    </div>`
+
+    })
+
+
+}
+getDataFromFirestore()
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
