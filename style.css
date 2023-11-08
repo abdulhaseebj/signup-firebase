@@ -1,29 +1,56 @@
-*{
-    font-family: 'Poppins', sans-serif;
-}
-
-/* .body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f1f3f6;
+* {
     font-family: 'Poppins', sans-serif;
     padding: 0px;
-} */
-.input{
+    margin: 0px;
+}
+
+
+.input {
     width: 100%;
     padding: 8px;
 }
- .grid {
+
+.main {
     display: flex;
-    align-items: center; 
+    align-items: center;
+    margin: 5px 10px 0px 10px;
 }
 
-.container{
+.container {
     justify-content: space-between;
 }
 
+/* .btn {
+    background: #38bdf8;
+    color: white;
+    border: none;
+    padding: 5px 20px 5px 20px;
+} */
 
+.home-body {
+    background: #f1f3f6;
+}
 
+.post-div {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    margin: 30px 400px 20px 400px;
+    border-radius: 20px;
+}
+
+.post-input {
+    padding: 5px;
+    width: 300px;
+    margin-top: 10px;
+    /* border: gold; */
+}
+
+.post-btn {
+    background: #38bdf8;
+    color: white;
+    border: none;
+    padding: 5px 138px 5px 138px;
+    margin-top: 15px;
+    font-size: 17px;
+}
