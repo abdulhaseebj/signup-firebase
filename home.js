@@ -1,20 +1,26 @@
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 import { auth, db } from "./config.js";
-import { collection, addDoc, getDocs, Timestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+import { collection, addDoc, getDocs, Timestamp, query, orderBy, where } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 const form = document.querySelector('.form')
 const title = document.querySelector('.title')
 const discrption = document.querySelector('.discription')
 const card = document.querySelector('.card')
 const data = document.querySelector('.data')
+const userRender = document.querySelector('.userRender')
 
 
 // user login or logout function
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
     if (user) {
-
         const uid = user.uid;
         console.log(uid);
+        const q = query(collection(db, "users"), where("uid", "==", uid));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            console.log(doc.data());
+            userRender.innerHTML = doc.data().name
+        });
 
     } else {
         window.location = 'login.html'
@@ -39,29 +45,7 @@ btn.addEventListener('click', () => {
 //  get data from firestone
 
 const arr = [];
-data.addEventListener('click', async function getDataFromFirestore() {
-    arr.length = 0;
-    const q = query(collection(db, "posts"), orderBy('postDate', 'desc'));
-    const querySnapshot = await getDocs(q);
-    // const querySnapshot = await getDocs(collection(db, "posts"));
-    querySnapshot.forEach((doc) => {
-        arr.push(doc.data())
-    });
-    console.log(arr);
-    arr.map((items) => {
-        card.innerHTML += `
-            <div class="bg-white my-[10px] mx-[400px] rounded-lg">
-                <div class="px-5 py-4">
-                    <p><span class="h4">Title:</span>${items.Title}</p>
-                    <p><span class="h4">Description:</span>${items.Description}</p>
-                </div>
-
-            </div>`
-
-
-    })
-})
-// async function getDataFromFirestore() {
+// data.addEventListener('click', async function getDataFromFirestore() {
 //     arr.length = 0;
 //     const q = query(collection(db, "posts"), orderBy('postDate', 'desc'));
 //     const querySnapshot = await getDocs(q);
@@ -72,17 +56,40 @@ data.addEventListener('click', async function getDataFromFirestore() {
 //     console.log(arr);
 //     arr.map((items) => {
 //         card.innerHTML += `
-//             <div class="card mt-2 ">
-//                 <div class="card-body">
+//             <div class="bg-white my-[10px] mx-[400px] rounded-lg">
+//                 <div class="px-5 py-4">
 //                     <p><span class="h4">Title:</span>${items.Title}</p>
 //                     <p><span class="h4">Description:</span>${items.Description}</p>
 //                 </div>
+
 //             </div>`
 
 
 //     })
-// }
-// getDataFromFirestore()
+// })
+async function getDataFromFirestore() {
+    arr.length = 0;
+    const q = query(collection(db, "posts"), orderBy('postDate', 'desc'));
+    const querySnapshot = await getDocs(q);
+    // const querySnapshot = await getDocs(collection(db, "posts"));
+    querySnapshot.forEach((doc) => {
+        arr.push(doc.data())
+    });
+    console.log(arr);
+    arr.map((items) => {
+        card.innerHTML += `
+                     <div class="bg-white my-[10px] mx-[400px] rounded-lg">
+                         <div class="px-5 py-4">
+                             <p><span class="h4">Title:</span>${items.Title}</p>
+                         <p><span class="h4">Description:</span>${items.Description}</p>
+        
+                         </div>
+        
+                   </div>`
+
+    })
+}
+getDataFromFirestore()
 
 // data post on firestone
 
